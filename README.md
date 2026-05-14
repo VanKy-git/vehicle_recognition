@@ -1,4 +1,4 @@
-# Hệ thống Phân loại Rau Củ Quả
+# Hệ thống Phân loại Phương tiện
 
 ## Mục tiêu
 - Train CNN bằng PyTorch.

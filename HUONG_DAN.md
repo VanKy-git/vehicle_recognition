@@ -1,5 +1,5 @@
 🚀 HƯỚNG DẪN SỬ DỤNG CẤU TRÚC FOLDER DỰ ÁN
-Đề tài: Hệ thống Phân loại Rau Củ Quả (Team 4 người)
+Đề tài: Hệ thống Phân loại Xe cộ (Team 4 người)
 
 Chào anh em! Để dự án không bị nát, GitHub không bị treo và code không đè lên nhau, anh em VUI LÒNG đọc kỹ bản đồ này trước khi nhét file vào folder nhé. Nguyên tắc tối thượng: "Đồ của ai, việc của người nấy, bỏ đúng chỗ!"
 
