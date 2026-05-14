@@ -1,0 +1,79 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+.env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Data / datasets
+/data/
+/dataset/
+raw_data/
+processed_data/
+*.csv
+*.xlsx
+*.json
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.tif
+*.tiff
+
+# Model weights / artifacts
+/weights/
+/models/
+*.pth
+*.pt
+*.h5
+*.keras
+*.ckpt
+*.onnx
+*.pkl
+*.joblib
+*.sav
+*.pickle
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Flask / web temp files
+instance/
+*.log
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Coverage / test artifacts
+.coverage
+htmlcov/
