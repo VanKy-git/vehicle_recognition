@@ -23,6 +23,7 @@ ENV/
 # Data / datasets
 /data/
 /dataset/
+*.npy
 raw_data/
 processed_data/
 *.csv
