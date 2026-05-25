@@ -83,11 +83,11 @@ def extract_hog_features(image_norm):
     image_uint8 = (image_norm * 255).astype(np.uint8)
     gray = cv2.cvtColor(image_uint8, cv2.COLOR_BGR2GRAY)
     
-    # Trích xuất HOG với cell 16x16 cho ảnh 128x128
+    # Trích xuất HOG với cell 16x16 cho ảnh 224x224
     hog_feats = hog(gray, orientations=9, pixels_per_cell=(16, 16), 
                    cells_per_block=(2, 2), visualize=False, channel_axis=None)
     
-    return hog_feats # 1764 chiều
+    return hog_feats # 6084 chiều
 
 def extract_all_features(image_path):
     """Hàm Pipeline kết hợp tất cả đặc trưng truyền thống: Màu sắc, Kết cấu, Hình dạng và Cấu trúc"""
@@ -99,7 +99,7 @@ def extract_all_features(image_path):
     f_lbp = extract_lbp(img_norm)                    # 26 chiều
     f_hu = extract_hu_moments(img_norm)              # 7 chiều
     f_glcm = extract_glcm_features(img_norm)         # 40 chiều
-    f_hog = extract_hog_features(img_norm)           # 1764 chiều
+    f_hog = extract_hog_features(img_norm)           # 6084 chiều
     
-    # 3. Nối các nhóm mảng lại thành một Vector tổng hợp (Tổng: 1901 chiều)
+    # 3. Nối các nhóm mảng lại thành một Vector tổng hợp (Tổng: 6221 chiều)
     return np.concatenate((f_color, f_lbp, f_hu, f_glcm, f_hog), axis=0)

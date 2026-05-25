@@ -12,7 +12,7 @@ def main():
     features_dir = "data/features"
     
     if not os.path.exists(processed_dir):
-        print(f"❌ Không tìm thấy thư mục dữ liệu đã tiền xử lý '{processed_dir}'. Vui lòng chạy split_dataset.py trước.")
+        print(f" Không tìm thấy thư mục dữ liệu đã tiền xử lý '{processed_dir}'. Vui lòng chạy split_dataset.py trước.")
         return
         
     os.makedirs(features_dir, exist_ok=True)
@@ -20,13 +20,13 @@ def main():
     
     for split in splits:
         split_path = os.path.join(processed_dir, split)
-        print(f"\n🚀 Đang trích xuất đặc trưng cho tập {split.upper()}...")
+        print(f"\n Đang trích xuất đặc trưng cho tập {split.upper()}...")
         
         # Load và trích xuất
         X, y = load_data(split_path)
         
         if len(X) == 0:
-            print(f"⚠️ Tập {split.upper()} không có dữ liệu để trích xuất.")
+            print(f" Tập {split.upper()} không có dữ liệu để trích xuất.")
             continue
             
         # Đường dẫn lưu file
@@ -37,11 +37,11 @@ def main():
         np.save(X_save_path, X)
         np.save(y_save_path, y)
         
-        print(f"✅ Đã lưu tập {split.upper()}:")
+        print(f" Đã lưu tập {split.upper()}:")
         print(f"   - X_{split} (kích thước: {X.shape}) -> '{X_save_path}'")
         print(f"   - y_{split} (kích thước: {y.shape}) -> '{y_save_path}'")
         
-    print("\n🎉 Hoàn thành trích xuất toàn bộ đặc trưng! Sẵn sàng cho việc train Random Forest.")
+    print("\n Hoàn thành trích xuất toàn bộ đặc trưng! Sẵn sàng cho việc train Random Forest.")
 
 if __name__ == "__main__":
     main()
