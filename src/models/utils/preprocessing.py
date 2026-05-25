@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import os
 
-def resize_with_padding(image_path, target_size=(128, 128)):
+def resize_with_padding(image_path, target_size=(224, 224)):
     """
     Hàm đọc ảnh từ thư mục, thu phóng giữ nguyên tỷ lệ và thêm viền đen (padding).
     
