@@ -19,7 +19,7 @@ Tài liệu này hướng dẫn chi tiết các bước để chuẩn bị dữ 
 > Hãy chắc chắn rằng bạn đang sử dụng môi trường **Python 3.11.9**  vì môi trường này đã được cài đặt đầy đủ các thư viện xử lý ảnh.
 
 ### Bước 1: Phân chia & Tiền xử lý Dữ liệu Vật lý
-Bước này sẽ chia dữ liệu gốc (10 lớp, mỗi lớp 1000 ảnh) theo tỷ lệ **70/15/15** (Train/Val/Test), tự động resize ảnh về kích thước **128x128 kèm theo padding đen** chống méo hình và chuẩn hóa pixel về đoạn $[0.0, 1.0]$.
+Bước này sẽ chia dữ liệu gốc (10 lớp, mỗi lớp 1000 ảnh) theo tỷ lệ **70/15/15** (Train/Val/Test), tự động resize ảnh về kích thước **224x224 kèm theo padding đen** chống méo hình và chuẩn hóa pixel về đoạn $[0.0, 1.0]$.
 
 Mở terminal Git Bash tại thư mục gốc dự án (`vehicle_recognition`) và chạy lệnh:
 ```bash
@@ -30,21 +30,21 @@ python -m src.models.utils.split_dataset
 ---
 
 ### Bước 2: Chạy Trích xuất Đặc trưng truyền thống
-Bước này sẽ duyệt qua toàn bộ ảnh sạch đã tiền xử lý ở Bước 1, trích xuất tổ hợp đặc trưng phong phú **1901 chiều** và đóng gói thành file NumPy `.npy` cho mô hình Random Forest.
+Bước này sẽ duyệt qua toàn bộ ảnh sạch đã tiền xử lý ở Bước 1, trích xuất tổ hợp đặc trưng phong phú **6221 chiều** và đóng gói thành file NumPy `.npy` cho mô hình Random Forest.
 * Đặc trưng màu sắc: **HSV Histogram** (64 chiều).
 * Đặc trưng kết cấu cục bộ: **LBP Histogram** (26 chiều).
 * Đặc trưng hình khối bất biến: **Hu Moments** (7 chiều).
 * Đặc trưng phân bố kết cấu không gian: **Haralick GLCM** (40 chiều).
-* Đặc trưng viền cấu trúc vật thể: **HOG** (1764 chiều).
+* Đặc trưng viền cấu trúc vật thể: **HOG** (6084 chiều).
 
 Chạy lệnh dưới đây từ terminal:
 ```bash
 python scripts/prepare_features.py
 ```
 * **Kết quả:** Các file đặc trưng được đóng gói nhanh chóng tại thư mục `data/features/`:
-  * `X_train.npy` (7000, 1901) & `y_train.npy` (7000,)
-  * `X_val.npy` (1500, 1901) & `y_val.npy` (1500,)
-  * `X_test.npy` (1500, 1901) & `y_test.npy` (1500,)
+  * `X_train.npy` (7000, 6221) & `y_train.npy` (7000,)
+  * `X_val.npy` (1500, 6221) & `y_val.npy` (1500,)
+  * `X_test.npy` (1500, 6221) & `y_test.npy` (1500,)
 
 ---
 
