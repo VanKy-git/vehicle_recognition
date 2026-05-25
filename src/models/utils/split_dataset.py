@@ -1,8 +1,13 @@
 import os
+import sys
 import shutil
 import random
 import cv2
 import numpy as np
+
+# Thêm thư mục gốc (vehicle_recognition) vào PYTHONPATH để nhận diện package src
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
+
 from src.models.utils.preprocessing import resize_with_padding
 
 def split_and_preprocess_dataset(raw_dir="data/raw", processed_dir="data/processed", train_ratio=0.7, val_ratio=0.15, test_ratio=0.15, random_seed=42):
