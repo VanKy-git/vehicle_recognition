@@ -23,6 +23,7 @@ ENV/
 # Data / datasets
 /data/
 /dataset/
+*.npy
 raw_data/
 processed_data/
 *.csv
@@ -39,7 +40,7 @@ processed_data/
 *.bmp
 *.tif
 *.tiff
-
+/scripts/FilterImagev1.1.1/
 # Model weights / artifacts
 /weights/
 /models/
@@ -77,3 +78,5 @@ dist/
 # Coverage / test artifacts
 .coverage
 htmlcov/
+.edge_crawler_profile/
+.edge_crawler_profile_fallback/
